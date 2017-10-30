@@ -11,8 +11,9 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    
-    var rows = Array.buildModelWith(elements: 10)
+    @IBOutlet weak var downloadingLabel: UILabel!
+
+    var rows = [String]()
     var timer: Timer?
 
     override func viewDidLoad() {
@@ -20,15 +21,18 @@ class ViewController: UIViewController {
 
         // hide empty rows
         tableView.tableFooterView = UIView()
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        timer = Timer.scheduledTimer(timeInterval: 1,
-                                     target: self,
-                                     selector: #selector(updateCell),
-                                     userInfo: nil,
-                                     repeats: true)
+        DataManager.requestData(delegate: self)
+
+//        timer = Timer.scheduledTimer(timeInterval: 1,
+//                                     target: self,
+//                                     selector: #selector(updateCell),
+//                                     userInfo: nil,
+//                                     repeats: true)
 
     }
 
@@ -52,6 +56,32 @@ class ViewController: UIViewController {
         tableView.beginUpdates()
         cell.updateWith(value: rows[rowNumber])
         tableView.endUpdates()
+    }
+
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            downloadingLabel.isHidden = false
+            DataManager.requestData(delegate: self)
+        }
+    }
+
+}
+
+extension ViewController: DataManagerDelegate {
+
+    func requestCompleted(data: [String]?, error: DataManagerError?) {
+
+        DispatchQueue.main.async {
+            self.downloadingLabel.isHidden = true
+        }
+
+        guard let data = data else {
+            return
+        }
+        DispatchQueue.main.async {
+            self.rows = data
+            self.tableView.reloadData()
+        }
     }
 
 }

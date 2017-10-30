@@ -15,6 +15,7 @@
 		28354D561F9A0B860098A85B /* DynamicViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28354D551F9A0B860098A85B /* DynamicViewCell.swift */; };
 		28354D5A1F9A25770098A85B /* String+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28354D591F9A25770098A85B /* String+Random.swift */; };
 		28354D5C1F9A6CFE0098A85B /* Array+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28354D5B1F9A6CFE0098A85B /* Array+Model.swift */; };
+		28B586841FA7274700809B75 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B586831FA7274700809B75 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		28354D551F9A0B860098A85B /* DynamicViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicViewCell.swift; sourceTree = "<group>"; };
 		28354D591F9A25770098A85B /* String+Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Random.swift"; sourceTree = "<group>"; };
 		28354D5B1F9A6CFE0098A85B /* Array+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Model.swift"; sourceTree = "<group>"; };
+		28B586831FA7274700809B75 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				28354D431F9A073B0098A85B /* AppDelegate.swift */,
 				28354D551F9A0B860098A85B /* DynamicViewCell.swift */,
 				28354D451F9A073B0098A85B /* ViewController.swift */,
+				28B586831FA7274700809B75 /* DataManager.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28354D461F9A073B0098A85B /* ViewController.swift in Sources */,
+				28B586841FA7274700809B75 /* DataManager.swift in Sources */,
 				28354D5A1F9A25770098A85B /* String+Random.swift in Sources */,
 				28354D561F9A0B860098A85B /* DynamicViewCell.swift in Sources */,
 				28354D441F9A073B0098A85B /* AppDelegate.swift in Sources */,

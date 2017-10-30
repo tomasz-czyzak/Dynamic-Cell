@@ -64,10 +64,23 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="Zcf-rg-dV4"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Downloading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZj-8X-LfM">
+                                <rect key="frame" x="30" y="318.5" width="315" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.41370524089999999" blue="0.56497419199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="3ne-rX-Iul"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="dZj-8X-LfM" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="4tq-9j-QXS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OFo-6m-pdR" secondAttribute="trailing" id="J4S-Xw-sAr"/>
+                            <constraint firstItem="dZj-8X-LfM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="OCM-zo-Sh8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dZj-8X-LfM" secondAttribute="trailing" constant="30" id="YFc-P4-MCc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="OFo-6m-pdR" secondAttribute="bottom" id="pTx-b4-nnI"/>
                             <constraint firstItem="OFo-6m-pdR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zVs-vI-CR4"/>
                             <constraint firstItem="OFo-6m-pdR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="zdT-G7-qTr"/>
@@ -75,12 +88,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="downloadingLabel" destination="dZj-8X-LfM" id="7q6-n4-Jm1"/>
                         <outlet property="tableView" destination="OFo-6m-pdR" id="Jsi-sw-7eT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-342" y="-542"/>
+            <point key="canvasLocation" x="-343.19999999999999" y="-542.87856071964018"/>
         </scene>
     </scenes>
 </document>
