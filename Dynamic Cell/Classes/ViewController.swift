@@ -14,48 +14,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var downloadingLabel: UILabel!
 
     var rows = [String]()
-    var timer: Timer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // hide empty rows
         tableView.tableFooterView = UIView()
-        
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         DataManager.requestData(delegate: self)
-
-//        timer = Timer.scheduledTimer(timeInterval: 1,
-//                                     target: self,
-//                                     selector: #selector(updateCell),
-//                                     userInfo: nil,
-//                                     repeats: true)
-
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        timer?.invalidate()
-        timer = nil
-    }
-
-    @objc func updateCell() {
-        let rowNumber = Int(arc4random_uniform(UInt32(rows.count)))
-
-        guard let cell = tableView.cellForRow(at: IndexPath(row: rowNumber, section: 0)) as? DynamicViewCell else {
-            return
-        }
-
-        // update model
-        rows[rowNumber] = String.generateRandomWords()
-
-        // update cell
-        tableView.beginUpdates()
-        cell.updateWith(value: rows[rowNumber])
-        tableView.endUpdates()
     }
 
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
@@ -70,7 +39,6 @@ class ViewController: UIViewController {
 extension ViewController: DataManagerDelegate {
 
     func requestCompleted(data: [String]?, error: DataManagerError?) {
-
         DispatchQueue.main.async {
             self.downloadingLabel.isHidden = true
         }

@@ -18,8 +18,4 @@ class DynamicViewCell: UITableViewCell {
         valueLabel.text = data.value
     }
 
-    func updateWith(value: String?) {
-        valueLabel.text = value
-    }
-
 }
